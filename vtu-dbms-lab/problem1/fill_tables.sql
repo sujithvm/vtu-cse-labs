@@ -39,11 +39,13 @@ SELECT * FROM Class;
 -- Filling Enrolled table with values
 
 INSERT INTO Enrolled VALUES
-		('2', 'CS1'),
-		('3', 'CS2'),
-		('4', 'CS1'),
-		('5', 'CS4'),
-		('6', 'CS5')
+		(2, 'CS1'),
+		(3, 'CS2'),
+		(4, 'CS1'),
+		(5, 'CS4'),
+		(6, 'CS5'),
+		(2, 'CS3'),
+		(3, 'CS4')
 	;
 
 SELECT * FROM Enrolled;

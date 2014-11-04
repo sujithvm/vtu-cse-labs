@@ -37,7 +37,7 @@ DESC Class;
 -- Creating Enrolled table
 
 CREATE TABLE Enrolled (
-		snum VARCHAR(15) REFERENCES Student (snum),
+		snum INT REFERENCES Student (snum),
 		cname VARCHAR(15) REFERENCES Class (cname)
 	);
 
