@@ -1,0 +1,17 @@
+#include <stdio.h>
+// This is a header file
+
+// Main function
+int main() {
+
+	/* Accept a number */
+	int num;	
+	scanf ("%d", &num);
+
+	/*
+		Print the number 
+	*/
+	printf ("%d", num);	
+
+	return 0;
+}
