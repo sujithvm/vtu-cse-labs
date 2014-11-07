@@ -8,7 +8,6 @@
 [\n] { line_count++; char_count++; }
 [\t] { space_count += 4; char_count++; }
 [^ \t\n]+ { word_count++; char_count += yyleng; }
-. { char_count++; }
 %%
 
 int main (int argc, char **argv) 
