@@ -2,6 +2,9 @@
 
 UPDATE  Catalog 
 SET price = (1.1) * price
-WHERE authorid = ( SELECT authorid
+WHERE authorid = ( 
+			SELECT authorid
 			FROM Author 
-			WHERE name = 'NAVATHE');
+			WHERE name = 'NAVATHE'
+		)
+;

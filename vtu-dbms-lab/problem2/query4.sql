@@ -2,12 +2,16 @@
 -- pilots certified for this aircraft.
 
 SELECT TEMP.NAME, TEMP.AVGSALARY
-	FROM (
-		SELECT A.aid, A.aname AS NAME, 
-		AVG (E.SALARY) AS AVGSALARY
-			FROM Aircraft A, Certified C, Employees E
-			WHERE 
-				A.aid = C.aid AND
-				C.eid = E.eid AND A.cruisingrange > 1000
-				GROUP BY A.aid, A.aname
-	) AS TEMP;
+FROM (
+	SELECT A.aid, A.aname AS NAME, AVG (E.SALARY) AS AVGSALARY
+	FROM Aircraft A, Certified C, Employees E
+	WHERE 
+		A.aid = C.aid AND
+		C.eid = E.eid AND 
+		A.cruisingrange > 1000
+
+	GROUP BY A.aid, A.aname
+
+) AS TEMP
+
+;

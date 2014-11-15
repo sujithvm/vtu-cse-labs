@@ -2,11 +2,11 @@
 -- the aircraft for which she or he is certified.
 
 SELECT C.eid, MAX(A.cruisingrange)
-	FROM Certified C, Aircraft A
-	WHERE A.aid = C.aid
-		GROUP BY C.eid 
-		HAVING COUNT(*) > 3
+FROM Certified C, Aircraft A
+WHERE A.aid = C.aid
+GROUP BY C.eid 
+HAVING COUNT(*) > 3
 	
-	;
+;
 
 		
