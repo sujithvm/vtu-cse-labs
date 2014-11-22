@@ -5,7 +5,7 @@ if [ $# -eq 0 ]; then
 fi
 
 for i in $* ; do
-	echo "extracting $i file " >> f.sh
+	echo "echo EXTRACTING $i FILE " >> f.sh
 	cat $i >> f.sh
-	echo "EOF" >> f.sh
+	echo "echo END OF $i FILE" >> f.sh	
 done

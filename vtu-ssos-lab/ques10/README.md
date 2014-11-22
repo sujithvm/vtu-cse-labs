@@ -88,6 +88,9 @@ Process	Burst	Wait	Turn-Around-Time
 2	3	4	7
 3	3	7	10
 
+
+Total wait time = 17
+Total turn around time = 47
 Average waiting time = 5.666667
 Average turn around time = 15.666667
 

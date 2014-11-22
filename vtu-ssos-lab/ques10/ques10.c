@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #define MAX_PROCESSES 5
+#define MIN 9999
 
 typedef struct
 {
@@ -32,7 +33,7 @@ float ratat = 0.0;	// round robin - average turn around time
 float sawt = 0.0;	// shortest job first - average wait time 
 float satat = 0;	// shortest job first - average turn around time
 
-int tq, t, i, j, count = 0, temp, sq = 0;
+int i, j;		// loop variables
 
 void main()
 {
@@ -58,7 +59,9 @@ void main()
 
 void sjf()
 {
-	int tbt = 0, no, k, min;
+	int tbt = 0;		// total burst time
+	int no = 0;		// process with minimum remaining time
+	int min = 0;		// for finding process with minimum remaining time
 
 	printf ("\n\nShortest job first scheduling\n\n");
 	printf ("Enter the total number of procedures: ");
@@ -77,55 +80,48 @@ void sjf()
 		scanf ("%d", &p[i].burst);
 
 		p[i].wait = 0;
-	}	
-
-	for (i = 0; i < n; i++)
-	{
 		p[i].remaining = p[i].burst;
 		tbt = tbt + p[i].burst;
-	}
+	}	
 	
 	for (i = 0; i < tbt; i++)
 	{
-		min = 999;
+		min = MIN;
 		for (j = 0; j < n; j++)
 		{
-			if (p[j].at <= i && p[j].remaining > 0)
+			if (p[j].at <= i && p[j].remaining > 0 && p[j].remaining < min)
 			{
-				if (p[j].remaining < min)
-				{
-					min = p[j].remaining;
-					no = j;
-				}
+				min = p[j].remaining;
+				no = j;				
 			}
 		}
 		
 		p[no].remaining = p[no].remaining - 1;
 
-		for (k = 0; k < n; k++)
+		for (j = 0; j < n; j++)
 		{
-			if(p[k].at <= i && p[k].remaining > 0 && p[k].name != no) 
+			if(p[j].at <= i && p[j].remaining > 0 && j != no) 
 			{
-				p[k].wait = p[k].wait + 1;
-			}
+				p[j].wait = p[j].wait + 1;	
+			}	
 		}
 	}
 
-	for (k = 0; k < n; k++)
+	for (i = 0; i < n; i++)
 	{
-		p[k].TAT = p[k].burst + p[k].wait;
+		p[i].TAT = p[i].burst + p[i].wait;
+		stwt = stwt + p[i].wait;
+		sttat = sttat + p[i].TAT;
 	}
+
+	sawt = (float) stwt / n;
+	satat = (float) sttat / n;
+
 
 	printf ("\n\nName\tArrival\tBurst\tWait\tTurn_Around_Time\n");
 
-	for (k = 0; k < n; k++)
-	{
-		stwt = stwt + p[k].wait;
-		sttat = sttat + p[k].TAT;
-		printf ("\nP%d\t%d\t%d\t%d\t%d", p[k].name, p[k].at, p[k].burst, p[k].wait, p[k].TAT);
-	}
-	sawt = (float) stwt / n;
-	satat = (float) sttat / n;
+	for (i = 0; i < n; i++)
+		printf ("\nP%d\t%d\t%d\t%d\t%d", p[i].name, p[i].at, p[i].burst, p[i].wait, p[i].TAT);	
 
 	printf ("\n\nTotal wait time = %d\nTotal turn around time = %d\n", stwt, sttat);
 	printf ("Average wait time = %f\nAverage turn around time = %f\n", sawt, satat);	
@@ -133,6 +129,11 @@ void sjf()
 
 void round_robin()
 {
+	int tq = 0;		// time quantum
+	int count = 0;		// count of finished processes
+	int temp = 0;		// for calculating turn around time
+	int sq = 0;		// for calculating turn around time
+
 	printf ("\n\nRound robin scheduling\n\n");
 	printf ("Enter number of processes: ");
 	scanf ("%d", &n1);
@@ -147,8 +148,7 @@ void round_robin()
 
 	printf ("Enter time quantum\n");
 	scanf ("%d", &tq);
-	t = 0;
-
+	
 	while (1)
 	{
 		for (i = 0, count = 0; i < n1; i++)
@@ -162,13 +162,11 @@ void round_robin()
 
 			if (p1[i].remaining > tq)
 			{
-				p1[i].remaining = p1[i].remaining - tq;				
-				t = t + tq;				
+				p1[i].remaining = p1[i].remaining - tq;						
 			}
 			else if (p1[i].remaining >= 0)
 			{
 				temp = p1[i].remaining;				
-				t = t + p1[i].remaining;
 				p1[i].remaining = 0;				
 			}
 			sq = sq + temp;
@@ -187,12 +185,13 @@ void round_robin()
 
 	rawt = (float) rtwt/n1;
 	ratat = (float) rttat/n1;
+
+
 	printf ("\n\nProcess\tBurst\tWait\tTurn-Around-Time\n");
 
 	for (i = 0; i < n1; i++)
-	{
 		printf ("%d\t%d\t%d\t%d\n", i + 1, p1[i].burst, p1[i].wait, p1[i].TAT);
-	}
-
-	printf ("\nAverage waiting time = %f\nAverage turn around time = %f\n", rawt, ratat);
+	
+	printf ("\n\nTotal wait time = %d\nTotal turn around time = %d\n", rtwt, rttat);
+	printf ("Average waiting time = %f\nAverage turn around time = %f\n", rawt, ratat);	
 }

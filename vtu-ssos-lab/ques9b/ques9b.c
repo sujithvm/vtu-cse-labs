@@ -19,8 +19,8 @@ int main()
 	{
 		printf ("Parent process\n");
 		printf ("My id = %d, child id = %d\n", getpid(), pid);
-	}
-	wait();
+		wait();
+	}	
 
 	return 0;
 }
