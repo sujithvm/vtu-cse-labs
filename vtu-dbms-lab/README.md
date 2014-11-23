@@ -17,7 +17,7 @@ mysql> USE Test;
 ii) Create tables. (Please use absolute path to file)
 
 ```
-mysql> SOURCE ../vtu-cse-labs/vtu-dbms-lab/problem2/table_creation.sql
+mysql> SOURCE ../vtu-cse-labs/vtu-dbms-lab/problem2/create_tables.sql
 
 ```
 
