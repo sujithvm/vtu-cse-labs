@@ -6,9 +6,13 @@ Problem Statement
 Consider the following relations:
 
 Student (snum: integer, sname: string, major: string, level: string, age: integer)
+
 Class (name: string, meets at: string, room: string, fid: integer)
+
 Enrolled (snum: integer, cname: string)
+
 Faculty (fid: integer, fname: string, deptid: integer)
+
 
 The meaning of these relations is straightforward; for example, Enrolled has one record per student-class pair 
 such that the student is enrolled in the class. Level is a two character code with 4 different values (example: 

@@ -6,9 +6,13 @@ Problem Statement
 The following relations keep track of airline flight information:
 
 Flights (no: integer, from: string, to: string, distance: integer, Departs: time, arrives: time, price: real)
+
 Aircraft (aid: integer, aname: string, cruisingrange: integer)
+
 Certified (eid: integer, aid: integer)
+
 Employees (eid: integer, ename: string, salary: integer)
+
 
 Note that the Employees relation describes pilots and other kinds of employees as well; Every pilot is certified 
 for some aircraft, and only pilots are certified to fly.
