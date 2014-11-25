@@ -1,6 +1,6 @@
 -- Find the names of all Juniors (level = JR) who are enrolled in a class taught by Prof. Harshith
 
-SELECT DISTINCT sname
+SELECT DISTINCT S.sname
 FROM Student S, Enrolled E, Class C, Faculty F
 WHERE 
 	S.snum = E.snum AND 
