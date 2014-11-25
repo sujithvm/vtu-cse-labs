@@ -18,7 +18,7 @@ INSERT INTO Employees VALUES
 	(162, 'Andrew', 50000),
 	(183, 'Laeddis', 60000),
 	(192, 'Rachel', 70000),
-	(204, 'Solando', 80000),
+	(204, 'Solando', 82000),
 	(300, 'Tony', 5000)
 ;
 

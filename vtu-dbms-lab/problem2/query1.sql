@@ -12,7 +12,7 @@ WHERE A.aid IN (
 						FROM Employees E1
 						WHERE 
 							E1.eid = E.eid AND 
-							E1.salary < 80000
+							E1.salary <= 80000
 					)
 		)
 ;
