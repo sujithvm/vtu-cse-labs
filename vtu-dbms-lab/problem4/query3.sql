@@ -7,7 +7,7 @@ WHERE EXISTS (
 		SELECT A1.authorid, COUNT(A1.authorid)
 		FROM Author A1, Catalog C
 		WHERE 
-			A1.AUTHORID = C.authorid AND
+			A1.authorid = C.authorid AND
 			A.authorid = A1.authorid AND
 			C.yearofpublish > 2000 AND
 			C.price > (
@@ -15,7 +15,7 @@ WHERE EXISTS (
 					FROM Catalog
 				)
 		GROUP BY A1.authorid
-		HAVING COUNT(A1.authorid) >=2
+		HAVING COUNT(A1.authorid) >= 2
 	)
 ;
 
