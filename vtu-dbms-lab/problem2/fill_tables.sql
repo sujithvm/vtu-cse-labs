@@ -51,12 +51,12 @@ SELECT * FROM Certified;
 -- Filling Flights table with values
 
 INSERT INTO Flights VALUES
-	(1, 'Bangalore', 'New Delhi', 500, TIMESTAMP '2014-11-4 09:24:26', TIMESTAMP '2014-11-4 09:24:26', 5000),
-	(2, 'Bangalore', 'Chennai', 300, TIMESTAMP '2014-11-4 09:24:26', TIMESTAMP '2014-11-4 09:24:26', 3000),
+	(1, 'Bengaluru', 'New Delhi', 500, TIMESTAMP '2014-11-4 09:24:26', TIMESTAMP '2014-11-4 09:24:26', 5000),
+	(2, 'Bengaluru', 'Chennai', 300, TIMESTAMP '2014-11-4 09:24:26', TIMESTAMP '2014-11-4 09:24:26', 3000),
 	(3, 'Trivandrum', 'New Delhi', 800, TIMESTAMP '2014-11-4 09:24:26', TIMESTAMP '2014-11-4 09:24:26', 6000),	
-	(4, 'Bangalore', 'Frankfurt', 10000, TIMESTAMP '2014-11-4 09:24:26', TIMESTAMP '2014-11-4 09:24:26', 50000),
+	(4, 'Bengaluru', 'Frankfurt', 10000, TIMESTAMP '2014-11-4 09:24:26', TIMESTAMP '2014-11-4 09:24:26', 50000),
 	(5, 'Kolkata', 'New Delhi', 2400, TIMESTAMP '2014-11-4 09:24:26', TIMESTAMP '2014-11-4 09:24:26', 9000),
-	(6, 'Bangalore', 'Frankfurt', 8000, TIMESTAMP '2014-11-4  09:24:26', TIMESTAMP '2014-11-4 09:24:26', 40000)
+	(6, 'Bengaluru', 'Frankfurt', 8000, TIMESTAMP '2014-11-4  09:24:26', TIMESTAMP '2014-11-4 09:24:26', 40000)
 ;
 
 SELECT * FROM Flights;

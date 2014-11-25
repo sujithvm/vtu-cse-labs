@@ -6,7 +6,7 @@ WHERE A.cruisingrange > (
 				SELECT MIN(F.distance) 
 				FROM Flights F 
 				WHERE 
-					F.ffrom = 'Bangalore' AND 
+					F.ffrom = 'Bengaluru' AND 
 					F.tto = 'New Delhi'
 			)
 ; 

@@ -6,7 +6,7 @@ WHERE E.salary < (
 			SELECT MIN(F.price) 
 			FROM Flights F
 			WHERE 
-				F.ffrom = 'Bangalore' AND
+				F.ffrom = 'Bengaluru' AND
 				F.tto = 'Frankfurt' 			
 		)
 ;
