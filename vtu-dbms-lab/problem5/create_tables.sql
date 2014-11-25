@@ -1,9 +1,10 @@
 -- Creating Branch table
 
 CREATE TABLE Branch (
-	branchname VARCHAR(30) PRIMARY KEY,
+	branchname VARCHAR(30),
 	branchcity VARCHAR(30),
-	assets REAL
+	assets REAL,
+	PRIMARY KEY (branchname)
 );
 
 DESC Branch;
@@ -12,9 +13,11 @@ DESC Branch;
 -- Creating BankAccount table
 
 CREATE TABLE BankAccount (
-	accno INT PRIMARY KEY,
-	branchname VARCHAR(30) REFERENCES Branch (branchname),
-	balance REAL
+	accno INT,
+	branchname VARCHAR(30),
+	balance REAL,
+	PRIMARY KEY (accno),
+	FOREIGN KEY (branchname) REFERENCES Branch (branchname)
 );
 
 DESC BankAccount;
@@ -23,9 +26,10 @@ DESC BankAccount;
 -- Creating BankCustomer table
 
 CREATE TABLE BankCustomer (
-	customername VARCHAR(30) PRIMARY KEY,
+	customername VARCHAR(30),
 	customerstreet VARCHAR(30),
-	customercity VARCHAR(30)
+	customercity VARCHAR(30),
+	PRIMARY KEY (customername)
 );
 
 DESC BankCustomer;
@@ -47,9 +51,10 @@ DESC Depositer;
 -- Creating Loan table
 
 CREATE TABLE Loan (
-	loannumber INT PRIMARY KEY,
+	loannumber INT,
 	branchname VARCHAR(30),
 	amount REAL,
+	PRIMARY KEY (loannumber),
 	FOREIGN KEY (branchname) REFERENCES Branch (branchname)
 );
 
@@ -63,6 +68,7 @@ CREATE TABLE Borrower (
 	loannumber INT,
 	PRIMARY KEY (customername, loannumber),
 	FOREIGN KEY (customername) REFERENCES BankCustomer (customername),
-	FOREIGN KEY (LOANNUMBER) REFERENCES Loan (LOANNUMBER));
+	FOREIGN KEY (loannumber) REFERENCES Loan (loannumber)
+);
 
 DESC Borrower;
