@@ -8,11 +8,11 @@ WHERE
 	BA.bookisbn = T.bookisbn AND 
 	C.dept = 'CS' AND
 	EXISTS (
-			SELECT COUNT(course)
-			FROM BookAdoption 
-			WHERE course = C.course
-			GROUP BY course
-			HAVING COUNT(course) >= 2
+			SELECT *
+			FROM BookAdoption BA1
+			WHERE BA1.course = C.course
+			GROUP BY BA1.course
+			HAVING COUNT(BA1.course) > 2
 		) 
 ORDER BY T.booktitle
 
