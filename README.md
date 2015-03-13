@@ -8,3 +8,4 @@ This repository contains source codes of VTU labs :
 3. Fourth semester Algorithms Lab 
 4. Fifth semester Database Management Systems Lab
 5. Fifth semester System Software and Operating Systems Lab
+6. Sixth semester Unix and Shell Programming
