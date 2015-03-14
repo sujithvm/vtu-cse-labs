@@ -15,13 +15,14 @@ Setting lock...
 
 File locked...
 
-Last 100 bytes read from file : 
+Last 50 bytes read from file : 
  guardian, a watchful protector, a Dark Knight.
 
 
 Releasing lock...
 
 File unlocked...
+
 
 ```
 

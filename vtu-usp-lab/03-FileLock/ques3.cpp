@@ -48,13 +48,13 @@ int main(int argc, char **argv)
 		exit(1);
 	}
 
-	if ((read(fd, buf, 100)) == -1)
+	if ((read(fd, buf, 50)) == -1)
 	{
 		cout << "Error : read " << endl;
 		exit(1);
 	}
 
-	cout << "\nLast 100 bytes read from file : " << endl;
+	cout << "\nLast 50 bytes read from file : " << endl;
 	cout << buf << endl;
 
 	cout << "\nReleasing lock..." << endl;
