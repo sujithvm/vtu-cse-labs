@@ -1,26 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
+#include <signal.h>
 
-void system_command(const char *command)
+#define INTERVAL 5
+
+void callme(int signo)
 {
-	pid_t pid = fork();
-	if (pid == 0)
-		execl ("/bin/bash", "bash", "-c", command, NULL);
-	else
-		waitpid (pid, NULL, 0);
+        alarm (INTERVAL);
+        printf ("Hello world!\n");
 }
 
-int main(int argc, char **argv)
+int main()
 {
-	int i;
-	for (i = 1; i < argc; i++)
-	{
-		system_command (argv[i]);
-		printf ("\n");
-	}		
+        struct sigaction action;
+        action.sa_handler= (void(*)(int)) callme;
+        sigaction (SIGALRM, &action, 0);
 
-	return 0;
+        alarm (2);
+        sleep (5);
+
+        return 0;
 }
