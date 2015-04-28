@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <unistd.h>
 
 #define STR_LEN 100
 
-static void print(char *str)
+static void print(const char *str)
 {
-        char *ptr;
-        int c;
+	int i;
 
-        setbuf(stdout, NULL);
+	setbuf(stdout, NULL);
 
-        for (ptr = str; (c = *ptr++) != '\0'; )
-                putc(c, stdout);
+	for (i = 0; i < strlen(str); i++)
+		putc(str[i], stdout);
 }
 
 int main()
@@ -24,32 +24,22 @@ int main()
 	char child_str[STR_LEN];
 	for (i = 0; i < STR_LEN; i++) 
 		child_str[i] = 'c';
-	child_str[STR_LEN] = '\0';
+	child_str[STR_LEN - 1] = '\0';
 
 	char parent_str[STR_LEN];
 	for (i = 0; i < STR_LEN; i++) 
 		parent_str[i] = 'p';
-	parent_str[STR_LEN] = '\0';
+	parent_str[STR_LEN - 1] = '\0';
 
 
 	// create process
 
-        pid_t pid = fork();
+	pid_t pid = fork();
 
-        if (pid == 0) 
-	{
-		// child process
-		print (child_str);
-	}
-	else if (pid > 0)
-	{
-		// parent process
-		print (parent_str);
-	}
-	else 
-	{
-		printf("Error : fork \n");
-	}
+	if (pid == 0) print (child_str);
+	else if (pid > 0) print (parent_str);
+	else printf("Error : fork \n");
+	
 
 	return 0;
 }
