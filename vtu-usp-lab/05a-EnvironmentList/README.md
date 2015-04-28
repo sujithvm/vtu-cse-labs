@@ -8,7 +8,7 @@ Write a C/C++ program that outputs the contents of its Environment list.
 
 ```
 
-$ gcc ques5a.c
+$ gcc ques5a.cpp
 $ ./a.out 
 XDG_VTNR=7
 SSH_AGENT_PID=1914
