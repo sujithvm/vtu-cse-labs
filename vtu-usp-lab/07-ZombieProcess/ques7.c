@@ -4,26 +4,14 @@
 
 int main()
 {
-	// create process
-
-        pid_t pid = fork();
-
-        if (pid == 0) 
-	{
-		// child process
-		printf ("Child process\n");
-		_exit(0);
-	}
-	else if (pid > 0)
-	{
-		// parent process
-		sleep (2);
-		printf ("Parent process\n");
-		system ("ps -o pid,ppid,state,tty,comm");
-	}
+	pid_t pid = fork();
+	
+	if (pid < 0) printf ("Error : fork() \n");
+	else if (pid == 0) _exit(0);
 	else 
 	{
-		printf("Error : fork \n");
+		sleep(2);
+		system("ps -o pid,ppid,stat,tty,comm");
 	}
 
 	return 0;

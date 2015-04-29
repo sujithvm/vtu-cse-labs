@@ -3,22 +3,23 @@
 #include <unistd.h>
 #include <signal.h>
 
-#define INTERVAL 5
+#define INTERVAL 2
 
 void callme(int signo)
 {
-        alarm (INTERVAL);
-        printf ("Hello world!\n");
+	alarm (INTERVAL);
+	printf ("Hello world!\n");
 }
 
 int main()
 {
-        struct sigaction action;
-        action.sa_handler= (void(*)(int)) callme;
-        sigaction (SIGALRM, &action, 0);
+	struct sigaction action;
+	action.sa_handler= (void(*)(int)) callme;
+	sigaction (SIGALRM, &action, 0);
 
-        alarm (2);
-        sleep (5);
+	alarm (INTERVAL);
 
-        return 0;
+	while (1);
+
+	return 0;
 }
