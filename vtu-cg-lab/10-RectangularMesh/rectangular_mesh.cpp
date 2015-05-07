@@ -22,9 +22,9 @@ void display()
 		{
 			glBegin(GL_LINE_LOOP);
 				glVertex2f(x[i], y[j]);
-                glVertex2f(x[i], y[j + 1]);
-                glVertex2f(x[i + 1], y[j + 1]);
-                glVertex2f(x[i + 1], y[j]);			
+				glVertex2f(x[i], y[j + 1]);
+				glVertex2f(x[i + 1], y[j + 1]);
+				glVertex2f(x[i + 1], y[j]);			
 			glEnd();
 		}
 	}
