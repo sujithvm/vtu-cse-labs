@@ -14,7 +14,7 @@ void callme(int signo)
 int main()
 {
 	struct sigaction action;
-	action.sa_handler= (void(*)(int)) callme;
+	action.sa_handler = callme;
 	sigaction (SIGALRM, &action, 0);
 
 	alarm (INTERVAL);
