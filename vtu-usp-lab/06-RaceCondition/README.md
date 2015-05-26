@@ -10,7 +10,7 @@ Write a C/C++ program to illustrate the race condition.
 
 $ gcc ques6.c
 $ ./a.out 
-pppppppppppppppppppppppppppppppppppppppppppppppppppppcppcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcpcccccccccccccccccccccccccccccccccccccccccccccccccccccc
+pchairlednt
 
 ```
 
