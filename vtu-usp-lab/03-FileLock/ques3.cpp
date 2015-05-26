@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 
 	fvar.l_type = F_WRLCK;
 	fvar.l_whence = SEEK_END;
-	fvar.l_start = SEEK_END - 100;
+	fvar.l_start = - 100;
 	fvar.l_len = 100;
 	
 	cout << "\nSetting lock..." << endl;
@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 
 	cout << "\nFile locked..." << endl;
 
-	if ((lseek(fd, SEEK_END - 50, SEEK_END)) == -1)
+	if ((lseek(fd, - 50, SEEK_END)) == -1)
 	{
 		cout << "Error : lseek " << endl;
 		exit(1);
