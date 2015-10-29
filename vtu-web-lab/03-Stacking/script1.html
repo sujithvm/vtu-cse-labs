@@ -1,45 +1,45 @@
 <html>
-	<head>
-		<title>Stacking</title>
-		<style type="text/css">
-			.para {				
-				width:300px;
-				height:300px;
-				position:absolute;				
-				z-index:0;
-			}
-			.para.p1 {
-				background-color:red;
-				left:20px;
-				top:20px;
-			}
-			.para.p2 {
-				background-color:blue;
-				left:60px;
-				top:60px;
-			}
-			.para.p3 {
-				background-color:green;
-				left:100px;
-				top:100px;
-			}
-		</style>
-	</head>
-	<body>
-		<script type="text/javascript">
-			var current = "p3";
-			function mover(toFront) {
-				document.getElementById(current).style.zIndex = "0";
-				document.getElementById(toFront).style.zIndex = "1";				
+    <head>
+        <title>Stacking</title>
+        <style type="text/css">
+            .para {                
+                width:300px;
+                height:300px;
+                position:absolute;                
+                z-index:0;
+            }
+            .para.p1 {
+                background-color:red;
+                left:20px;
+                top:20px;
+            }
+            .para.p2 {
+                background-color:blue;
+                left:60px;
+                top:60px;
+            }
+            .para.p3 {
+                background-color:green;
+                left:100px;
+                top:100px;
+            }
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var current = "p3";
+            function mover(toFront) {
+                document.getElementById(current).style.zIndex = "0";
+                document.getElementById(toFront).style.zIndex = "1";                
 
-				current = toFront;
-			}
-		</script>
+                current = toFront;
+            }
+        </script>
 
-		<form>
-			<p class="para p1" id="p1" onMouseOver=mover("p1")>Paragraph 1</p>
-			<p class="para p2" id="p2" onMouseOver=mover("p2")>Paragraph 2</p>
-			<p class="para p3" id="p3" onMouseOver=mover("p3")>Paragraph 3</p>
-		</form>
-	</body>
+        <form>
+            <p class="para p1" id="p1" onMouseOver=mover("p1")>Paragraph 1</p>
+            <p class="para p2" id="p2" onMouseOver=mover("p2")>Paragraph 2</p>
+            <p class="para p3" id="p3" onMouseOver=mover("p3")>Paragraph 3</p>
+        </form>
+    </body>
 </html>
