@@ -1,13 +1,13 @@
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="4b.xsl"?>
-<students>
-<VTU>
-<USN> 1PE12CS169 </USN>
-<name> Tushara Devi </name>
-<college> PESIT Bangalore South Campus </college>
-<branch> CSE </branch>
-<YOJ> 2012 </YOJ>
-<email> tusharadevi@gmail.com </email>
-</VTU>
-</students>
-
+<?xml version="1.0" ?>
+ <!-- Obtain stylesheet. Note that the xml file & xsl file should be in the same directory/location -->
+ <?xml-stylesheet type="text/xsl" href="4b.xsl" ?>
+    <student>
+        <info>
+            <usn>1PQ10CS025</usn>
+            <name>pqr</name>
+            <coll>PQ</coll>
+            <branch>CSE</branch>
+            <yoj>2010</yoj>
+            <email>pqr@samp.com</email>
+        </info>
+    </student>
