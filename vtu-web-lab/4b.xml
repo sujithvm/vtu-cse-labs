@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="4b.xsl"?>
+<students>
+<VTU>
+<USN> 1PE12CS169 </USN>
+<name> Tushara Devi </name>
+<college> PESIT Bangalore South Campus </college>
+<branch> CSE </branch>
+<YOJ> 2012 </YOJ>
+<email> tusharadevi@gmail.com </email>
+</VTU>
+</students>
+

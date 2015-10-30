@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="4a.css" type="text/css"?>
+<student>
+<stud-info>Student Information</stud-info>
+<stud1>
+    <usn>USN: 1PE12CS166</usn>
+    <name>Name: Sushmitha S P</name>
+    <noc>College: PESIT Bangalore South Campus</noc>
+    <branch>Branch: Computer Science and Engineering</branch>
+    <yoj>Year: 2012</yoj>
+    <eid>Email: sush16@gmail.com</eid>
+</stud1>
+<br/>
+<stud2>
+    <usn>USN: 1PE12CS180</usn>
+    <name>Name: Vinod J</name>
+    <noc>College: PESIT Bangalore South Campus</noc>
+    <branch>Branch: Computer Science and Engineering</branch>
+    <yoj>Year: 2012</yoj>
+    <eid>Email: vinodj@gmail.com</eid>
+</stud2>
+<br/>
+<stud3>
+    <usn>USN: 1PE12CS179</usn>
+    <name>Name: Vineeth Bhat</name>
+    <noc>College: PESIT Bangalore South Campus</noc>
+    <branch>Branch: Computer Science and Engineering</branch>
+    <yoj>Year: 2012</yoj>
+    <eid>Email: vineethbhat@gmail.com</eid>
+</stud3> 
+</student>
+
