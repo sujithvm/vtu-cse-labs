@@ -1,5 +1,5 @@
 <?php
-    $db = mysql_connect("localhost", "root", "root");
+    $db = mysql_connect("localhost", "root", "root123");
     mysql_select_db("test");
 
     $name = $_POST['name'];
@@ -17,8 +17,6 @@
         print "<tr><td>$a[0]</td><td>$a[1]</td><td>$a[2]</td><td>$a[3]</td></tr>";
     
     print "</table>";
-
-    echo "Server connected";
 
     mysql_close($db);
 ?>

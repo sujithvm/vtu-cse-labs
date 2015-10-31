@@ -2,31 +2,31 @@
 <?xml-stylesheet href="4a.css" type="text/css"?>
 <student>
 <stud-info>Student Information</stud-info>
-<stud1>
-    <usn>USN: 1PE12CS166</usn>
-    <name>Name: Sushmitha S P</name>
-    <noc>College: PESIT Bangalore South Campus</noc>
-    <branch>Branch: Computer Science and Engineering</branch>
-    <yoj>Year: 2012</yoj>
-    <eid>Email: sush16@gmail.com</eid>
-</stud1>
-<br/>
-<stud2>
-    <usn>USN: 1PE12CS180</usn>
-    <name>Name: Vinod J</name>
-    <noc>College: PESIT Bangalore South Campus</noc>
-    <branch>Branch: Computer Science and Engineering</branch>
-    <yoj>Year: 2012</yoj>
-    <eid>Email: vinodj@gmail.com</eid>
-</stud2>
-<br/>
-<stud3>
-    <usn>USN: 1PE12CS179</usn>
-    <name>Name: Vineeth Bhat</name>
-    <noc>College: PESIT Bangalore South Campus</noc>
-    <branch>Branch: Computer Science and Engineering</branch>
-    <yoj>Year: 2012</yoj>
-    <eid>Email: vineethbhat@gmail.com</eid>
-</stud3> 
+    <stud1>
+        <usn>1PE12CS162</usn>
+        <name>Sujith</name>
+        <noc>PESIT</noc>
+        <branch>CSE</branch>
+        <yoj>2012</yoj>
+        <eid>sujithvm24@gmail.com</eid>
+    </stud1>
+    <br/>
+    <stud2>
+        <usn>1PE12CS023</usn>
+        <name>Archana Menon</name>
+        <noc>PESIT</noc>
+        <branch>CSE</branch>
+        <yoj>2012</yoj>
+        <eid>archana.menon94@gmail.com</eid>
+    </stud2>
+    <br/>
+    <stud3>
+        <usn>1PE12CS192</usn>
+        <name>Rajath</name>
+        <noc>PESIT</noc>
+        <branch>CSE</branch>
+        <yoj>2012</yoj>
+        <eid>rajath.suresh@gmail.com</eid>
+    </stud3> 
 </student>
 
