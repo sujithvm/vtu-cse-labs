@@ -3,11 +3,11 @@
  <?xml-stylesheet type="text/xsl" href="4b.xsl" ?>
     <student>
         <info>
-            <usn>1PQ10CS025</usn>
-            <name>pqr</name>
-            <coll>PQ</coll>
+            <usn>1PE12CS138</usn>
+            <name>Sakshi</name>
+            <coll>PESIT</coll>
             <branch>CSE</branch>
-            <yoj>2010</yoj>
-            <email>pqr@samp.com</email>
+            <yoj>2012</yoj>
+            <email>sakshi.bankawat@gmail.com</email>
         </info>
     </student>
