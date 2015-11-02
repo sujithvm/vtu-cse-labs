@@ -1,5 +1,16 @@
 #!/usr/bin/perl
 
+
+# Note : Do the following before execution
+# 
+# $ mysql -u root -p
+# root123                      (password)
+# 
+# > CREATE DATABASE test;
+# > use test;
+# > CREATE TABLE Students (name TEXT, age INT);
+#
+
 use CGI':standard';
 print "content-type:text/html\n\n";
 
@@ -32,5 +43,5 @@ print "<tr>
 
 $sth->finish();
 $dbh->disconnect();
-print"</table> </HTML>";
+print"</table>";
 

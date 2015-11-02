@@ -1,0 +1,17 @@
+TitleText: "Packet delivery ratio versus Bandwidth"
+XUnitText: "Bandwidth"
+YUnitText: "Packet delivery ratio"
+
+"TCP"
+0.5 0.849057
+1.0 0.930070
+1.5 0.953975
+2.0 0.986150
+2.5 1.000
+
+"CBR"
+0.5 0.855460
+1.0 0.961456
+1.5 0.983940
+2.0 0.988223
+2.5 1.000

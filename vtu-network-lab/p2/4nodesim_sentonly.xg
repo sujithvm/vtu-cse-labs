@@ -1,0 +1,22 @@
+TitleText: "Packet Sent versus Bandwidth"
+XUnitText: "Bandwidth"
+YUnitText: "Num of Pkt Sent"
+
+"TCP"
+0.5 53
+1.0 143
+1.5 239
+2.0 364
+2.5 556
+3.0 557
+3.5 558
+
+"CBR"
+0.5 934
+1.0 934
+1.5 934
+2.0 934
+2.5 934
+3.0 934
+3.5 934
+

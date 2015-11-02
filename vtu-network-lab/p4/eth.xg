@@ -1,0 +1,19 @@
+TitleText: "Performance analysis: Error rate vs Throughput in Mbps"
+XUnitText: "ErrorRate value in fraction"
+YUnitText: "Throughput in Mbps"
+
+0.01 2.202500
+0.025 2.097250
+0.05 2.007750
+0.075 1.939000
+0.1 1.879750
+0.125 1.827750
+0.15 1.766500
+0.2 1.652750
+0.25 1.546250
+0.3 1.410250
+0.35 1.317750
+0.4 1.222250
+0.45 1.11420
+0.5 1.0011750
+0.6 0.803750

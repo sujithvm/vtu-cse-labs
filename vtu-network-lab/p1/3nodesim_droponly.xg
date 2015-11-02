@@ -1,0 +1,22 @@
+TitleText: "Packet Drop versus Bandwidth"
+XUnitText: "Bandwidth"
+YUnitText: "Num of Pkt Dropped"
+
+"TCP"
+0.4 11
+0.5 12
+1.0 12
+1.5 12
+2.0 10
+2.5 8
+3.0 7
+
+"CBR"
+0.4 91
+0.5 0
+1.0 0
+1.5 0
+2.0 0
+2.5 0
+3.0 0
+
