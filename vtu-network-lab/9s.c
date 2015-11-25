@@ -1,79 +1,39 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-
-#include<fcntl.h>
-#include<netinet/in.h>
-#include<sys/socket.h>
-#include<arpa/inet.h>
-
-#define MYPORT 6490
-#define BACKLOG 10
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
 
 int main()
 {
-    int sockfd,fp,new_fd;
-    struct sockaddr_in my_addr,their_addr;
-    int sin_size, i = 0;
-    int yes = 1;
-    char buf1[20],buf2[20000];
+    int sockfd, newfd, yes = 1;
+    sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int));
+    
+    struct sockaddr_in saddr, taddr;
+    saddr.sin_family = AF_INET;
+    saddr.sin_port = htons(6980);
+    saddr.sin_addr.s_addr = INADDR_ANY;
+    memset(&(saddr.sin_zero), '0', 8);
 
-    if((sockfd=socket(AF_INET,SOCK_STREAM,0)) == -1)
-    {
-        printf ("error : socket\n");
-        exit(1);
-    }
+    bind(sockfd, (struct sockaddr *) &saddr, sizeof(struct sockaddr));
+    listen(sockfd, 10);
 
-    if(setsockopt(sockfd,SOL_SOCKET,SO_REUSEADDR,&yes, sizeof(int)) == -1)
-    {
-        printf ("error : setsockopt\n");
-        exit(1);
-    }
+    int sin_size = sizeof(struct sockaddr);
+    newfd = accept(sockfd, (struct sockaddr *) &taddr, &sin_size);
 
-    my_addr.sin_family=AF_INET;
-    my_addr.sin_port=htons(MYPORT);
-    my_addr.sin_addr.s_addr=INADDR_ANY;
-    memset(&(my_addr.sin_zero), '\0', 8);
+    char filename[100], buffer[1 << 20];
+    recv(newfd, filename, sizeof(filename), 0);
 
-    if(bind(sockfd,(struct sockaddr *)&my_addr, sizeof(struct sockaddr)) ==-1)
-    {
-        printf ("error : bind\n");
-        exit(1);
-    }
+    int fd = open(filename, O_RDONLY);
+    read(fd, buffer, sizeof(buffer));
+    close(fd);
 
-    if(listen(sockfd, BACKLOG) == -1)
-    {
-        printf ("error : listen\n");
-        exit(1);
-    }
+    send(newfd, buffer, sizeof(buffer), 0);
 
-    printf("\n SERVER is online! \n SERVER: Waiting for the client........\n");
-    sin_size=sizeof(struct sockaddr_in);
-    if((new_fd=accept(sockfd,(struct sockaddr *)&their_addr, &sin_size))==-1)
-    {
-        perror("Accept");
-        exit(0);
-    }
-
-    printf("\n SERVER: Got connection from %s \n", inet_ntoa(their_addr.sin_addr));
-    recv(new_fd, &buf1, sizeof(buf1), 0);
-    printf("File requested is %s\n", buf1);
-    if((fp = open(buf1, O_RDONLY)) < 0)
-    {
-        printf("File not found\n");
-        strcpy(buf2,"File not found");
-    }
-    else
-    {
-        printf("SERVER: %s found and ready to transfer.\n",buf1);
-        read(fp,&buf2,20000);
-        close(fp);
-    }
-
-    send(new_fd,&buf2,sizeof(buf2),0);
-    close(new_fd);
-    close(sockfd);
-    printf("Transfer success \n");
-    printf("\n");
+    close(newfd);
+    close(sockfd);    
     return 0;
-} 
+}
+
