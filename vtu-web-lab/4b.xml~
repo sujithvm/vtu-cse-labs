@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<<<<<<< HEAD
+<?xml-stylesheet type="text/xsl" href="4b.xsl" ?>
+<student>
+    <info>
+        <usn>1PE12CS162</usn>
+        <name>Sujith</name>
+        <coll>PESIT</coll>
+        <branch>CSE</branch>
+        <yoj>2012</yoj>
+        <email>sujithvm24@gmail.com</email>
+    </info>
+</student>
+=======
+ <!-- Obtain stylesheet. Note that the xml file & xsl file should be in the same directory/location -->
+ <?xml-stylesheet type="text/xsl" href="4b.xsl" ?>
+    <student>
+        <info>
+            <usn>1PE12CS162</usn>
+            <name>Sujith</name>
+            <coll>PESIT</coll>
+            <branch>CSE</branch>
+            <yoj>2012</yoj>
+            <email>sujithvm24@gmail.com</email>
+        </info>
+    </student>
+>>>>>>> 9ecf09160038f4c3b77debc11b6ef677be5aa3df
