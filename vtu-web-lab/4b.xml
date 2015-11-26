@@ -1,13 +1,12 @@
 <?xml version="1.0" ?>
- <!-- Obtain stylesheet. Note that the xml file & xsl file should be in the same directory/location -->
- <?xml-stylesheet type="text/xsl" href="4b.xsl" ?>
-    <student>
-        <info>
-            <usn>1PE12CS138</usn>
-            <name>Sakshi</name>
-            <coll>PESIT</coll>
-            <branch>CSE</branch>
-            <yoj>2012</yoj>
-            <email>sakshi.bankawat@gmail.com</email>
-        </info>
-    </student>
+<?xml-stylesheet type="text/xsl" href="4b.xsl" ?>
+<student>
+    <info>
+        <usn>1PE12CS162</usn>
+        <name>Sujith</name>
+        <coll>PESIT</coll>
+        <branch>CSE</branch>
+        <yoj>2012</yoj>
+        <email>sujithvm24@gmail.com</email>
+    </info>
+</student>
