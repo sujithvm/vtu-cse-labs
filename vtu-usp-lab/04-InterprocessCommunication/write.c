@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
-
+#include <sys/stat.h>
 #define BUF_SIZE 256
 
 int main(int argc, char **argv)
